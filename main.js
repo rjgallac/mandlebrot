@@ -21,11 +21,17 @@ function drawPixel(context, x, y, color) {
 var canvas = document.querySelector('#myCanvas');
 var context = canvas.getContext('2d')
 
+xoffset1 = -0.5;
+xoffset2 = 0;
+yoffset1 = -0.5;
+yoffset2 = 0.5;
+
+
 for (i=0; i<canvas.width; i++) {
     for (j=0; j<canvas.height; j++) {
-        let xdiv = Math.abs(-2.00 - 0.47) / canvas.width;
+        let xdiv = Math.abs((-2.00 + xoffset1) - 0.47 + xoffset2) / canvas.width;
         x0 = xdiv * i - 2;
-        let ydiv = Math.abs(-1.12 - 1.12) / canvas.height;
+        let ydiv = Math.abs(-1.12 + yoffset1 - 1.12 + yoffset2) / canvas.height;
         y0 = ydiv * j - 1.12;
         x=0.0;
         y=0.0;
